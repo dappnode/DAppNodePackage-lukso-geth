@@ -1,18 +1,30 @@
 #!/bin/sh
 
 case "$_DAPPNODE_GLOBAL_CONSENSUS_CLIENT_LUKSO" in
- "prysm-lukso.dnp.dappnode.eth")
-   echo "Using prysm-lukso.dnp.dappnode.eth"
-   JWT_PATH="/security/prysm/jwtsecret.hex"
-   ;;
- "lighthouse-lukso.dnp.dappnode.eth")
-   echo "Using lighthouse-lukso.dnp.dappnode.eth"
-   JWT_PATH="/security/lighthouse/jwtsecret.hex"
-   ;;
- *)
-   echo "Using default JWT"
-   JWT_PATH="/security/default/jwtsecret.hex"
-   ;;
+  "prysm-lukso.dnp.dappnode.eth")
+    echo "Using prysm-lukso.dnp.dappnode.eth"
+    JWT_PATH="/security/prysm/jwtsecret.hex"
+    ;;
+  "lighthouse-lukso.dnp.dappnode.eth")
+    echo "Using lighthouse-lukso.dnp.dappnode.eth"
+    JWT_PATH="/security/lighthouse/jwtsecret.hex"
+    ;;
+  "lodestar-lukso.dnp.dappnode.eth")
+      echo "Using lodestar-lukso.dnp.dappnode.eth"
+      JWT_PATH="/security/lodestar/jwtsecret.hex"
+      ;;
+  "teku-lukso.dnp.dappnode.eth")
+      echo "Using teku-lukso.dnp.dappnode.eth"
+      JWT_PATH="/security/teku/jwtsecret.hex"
+      ;;
+  "nimbus-lukso.dnp.dappnode.eth")
+      echo "Using nimbus-lukso.dnp.dappnode.eth"
+      JWT_PATH="/security/nimbus/jwtsecret.hex"
+      ;;
+  *)
+    echo "Using default JWT"
+    JWT_PATH="/security/default/jwtsecret.hex"
+    ;;
 esac
 
 # Print the jwt to the dappmanager
