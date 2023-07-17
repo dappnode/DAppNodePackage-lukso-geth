@@ -32,7 +32,7 @@ JWT=$(cat $JWT_PATH)
 curl -X POST "http://my.dappnode/data-send?key=jwt&data=${JWT}"
 
 # Init Geth from genesis
-exec geth --datadir=/lukso init /configs/genesis.json
+exec geth --datadir=/lukso init /config/genesis.json
 
 exec geth \
   --datadir=/lukso \
@@ -46,7 +46,7 @@ exec geth \
   --http.corsdomain "*" \
   --http.vhosts "*" \
   --ipcdisable \
-  --authrpc.addr 0.0.0.0 \ \
+  --authrpc.addr 0.0.0.0 \
   --authrpc.port 8551 \
   --authrpc.vhosts "*" \
   --authrpc.jwtsecret ${JWT_PATH} \
