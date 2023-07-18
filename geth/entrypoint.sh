@@ -34,25 +34,25 @@ curl -X POST "http://my.dappnode/data-send?key=jwt&data=${JWT}"
 # Init Geth from genesis
 exec geth --datadir=/lukso init /config/genesis.json
 
-exec geth \
-  --datadir=/lukso \
-  --ws \
-  --ws.api eth,engine,net,web3,txpool \
-  --ws.addr 0.0.0.0 \
-  --ws.origins "*" \
+exec geth --datadir /lukso \
+  --port ${P2P_PORT} \
   --http \
   --http.api eth,engine,net,web3,txpool \
   --http.addr 0.0.0.0 \
   --http.corsdomain "*" \
   --http.vhosts "*" \
+  --ws \
+  --ws.api eth,engine,net,web3,txpool \
+  --ws.addr 0.0.0.0 \
+  --ws.origins "*" \
   --ipcdisable \
   --authrpc.addr 0.0.0.0 \
   --authrpc.port 8551 \
   --authrpc.vhosts "*" \
   --authrpc.jwtsecret ${JWT_PATH} \
+  --syncmode ${SYNC_MODE:-snap} \
   --metrics \
   --metrics.addr 0.0.0.0 \
-  --port ${P2P_PORT} \
   ${EXTRA_FLAGS}
 #  --bootnodes $EXECUTION_BOOTSTRAP_NODE_1 \
 #  --networkid 42  \
