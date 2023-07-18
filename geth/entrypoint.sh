@@ -27,23 +27,26 @@ case "$_DAPPNODE_GLOBAL_CONSENSUS_CLIENT_LUKSO" in
     ;;
 esac
 
-# Print the jwt to the dappmanager
+echo "[INFO - entrypoint] Posting JWT to dappmanager: ${JWT_PATH}"
 JWT=$(cat $JWT_PATH)
 curl -X POST "http://my.dappnode/data-send?key=jwt&data=${JWT}"
 
-# Init Geth from genesis
-exec geth --datadir=/lukso init /config/genesis.json
+echo "[INFO - entrypoint] Initializing Geth from genesis"
+geth --datadir=/lukso init /config/genesis.json
 
+echo "[INFO - entrypoint] Starting Geth"
 exec geth --datadir /lukso \
+  --config /config/geth.toml \
   --port ${P2P_PORT} \
   --http \
-  --http.api eth,engine,net,web3,txpool \
+  --http.api "eth,engine,net,web3,txpool" \
   --http.addr 0.0.0.0 \
   --http.corsdomain "*" \
   --http.vhosts "*" \
   --ws \
-  --ws.api eth,engine,net,web3,txpool \
+  --ws.api "eth,engine,net,web3,txpool" \
   --ws.addr 0.0.0.0 \
+  --ws.port 8546 \
   --ws.origins "*" \
   --ipcdisable \
   --authrpc.addr 0.0.0.0 \
@@ -54,7 +57,3 @@ exec geth --datadir /lukso \
   --metrics \
   --metrics.addr 0.0.0.0 \
   ${EXTRA_FLAGS}
-#  --bootnodes $EXECUTION_BOOTSTRAP_NODE_1 \
-#  --networkid 42  \
-#  --miner.gaslimit 42000000 \
-#  --miner.gasprice 4200000000 \
