@@ -39,16 +39,15 @@ exec geth --datadir /lukso \
   --config /config/geth.toml \
   --port ${P2P_PORT} \
   --http \
-  --http.api "eth,engine,net,web3,txpool" \
+  --http.api eth,engine,net,web3,txpool \
   --http.addr 0.0.0.0 \
   --http.corsdomain "*" \
   --http.vhosts "*" \
   --ws \
-  --ws.api "eth,engine,net,web3,txpool" \
+  --ws.api eth,engine,net,web3,txpool \
   --ws.addr 0.0.0.0 \
   --ws.port 8546 \
   --ws.origins "*" \
-  --ipcdisable \
   --authrpc.addr 0.0.0.0 \
   --authrpc.port 8551 \
   --authrpc.vhosts "*" \
