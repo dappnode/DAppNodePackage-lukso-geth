@@ -22,15 +22,13 @@
       "name": "Lukso Geth JSON-RPC (HTTP)",
       "description": "HTTP-JSON-RPC endpoint for Lukso testnet",
       "serviceName": "lukso-geth",
-      "port": 8545,
-      "exposeByDefault": false
+      "port": 8545
     },
     {
       "name": "Lukso Geth JSON-RPC (WS)",
       "description": "WS-JSON-RPC endpoint for Lukso testnet",
       "serviceName": "lukso-geth-ws",
-      "port": 8546,
-      "exposeByDefault": false
+      "port": 8546
     }
   ],
   "repository": {
