@@ -4,8 +4,8 @@
   "upstreamVersion": "v1.11.6",
   "upstreamRepo": "ethereum/go-ethereum",
   "upstreamArg": "UPSTREAM_VERSION",
-  "shortDescription": "Geth execution client for Lukso network",
-  "description": "Geth execution client for Lukso network",
+  "shortDescription": "Geth execution client for LUKSO network",
+  "description": "Geth execution client for LUKSO network",
   "type": "service",
   "chain": "ethereum",
   "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
@@ -19,14 +19,14 @@
   },
   "exposable": [
     {
-      "name": "Lukso Geth JSON-RPC (HTTP)",
-      "description": "HTTP-JSON-RPC endpoint for Lukso testnet",
+      "name": "LUKSO Geth JSON-RPC (HTTP)",
+      "description": "HTTP-JSON-RPC endpoint for LUKSO mainnet",
       "serviceName": "lukso-geth",
       "port": 8545
     },
     {
-      "name": "Lukso Geth JSON-RPC (WS)",
-      "description": "WS-JSON-RPC endpoint for Lukso testnet",
+      "name": "LUKSO Geth JSON-RPC (WS)",
+      "description": "WS-JSON-RPC endpoint for LUKSO mainnet",
       "serviceName": "lukso-geth-ws",
       "port": 8546
     }
