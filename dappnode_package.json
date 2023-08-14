@@ -46,6 +46,6 @@
     }
   ],
   "requirements": {
-    "minimumDappnodeVersion": "0.2.76"
+    "minimumDappnodeVersion": "0.2.77"
   }
 }
