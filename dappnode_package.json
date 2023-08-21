@@ -1,7 +1,7 @@
 {
   "name": "lukso-geth.dnp.dappnode.eth",
-  "version": "0.1.0",
-  "upstreamVersion": "v1.11.6",
+  "version": "0.1.1",
+  "upstreamVersion": "v1.12.2",
   "upstreamRepo": "ethereum/go-ethereum",
   "upstreamArg": "UPSTREAM_VERSION",
   "shortDescription": "Geth execution client for LUKSO network",
