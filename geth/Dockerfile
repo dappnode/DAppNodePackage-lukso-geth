@@ -11,6 +11,6 @@ RUN apk update && apk add curl && \
 RUN mkdir /config
 
 # Get Lukso genesis for Geth
-RUN curl -L https://raw.githubusercontent.com/lukso-network/network-configs/main/mainnet/shared/genesis_42.json -o /config/genesis.json
+RUN curl -L https://raw.githubusercontent.com/lukso-network/network-configs/main/mainnet/shared/genesis.json -o /config/genesis.json
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
