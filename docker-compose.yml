@@ -15,7 +15,7 @@ services:
       - EXTRA_FLAGS
       - P2P_PORT=33141
       - SYNCMODE=snap
-      - GASPRICE=1000000000
+      - GAS_PRICE=1000000000
       - MAX_PEERS=50
     image: geth.lukso-geth.dnp.dappnode.eth:0.1.0
 volumes:
